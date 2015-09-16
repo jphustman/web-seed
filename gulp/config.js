@@ -34,6 +34,7 @@ module.exports = {
         src:  srcAssets + '/scss/**/*.{sass,scss}',
         dest: developmentAssets + '/css',
         options: {
+            precision: 10,
             noCache: true,
             compass: false,
             bundleExec: true,
