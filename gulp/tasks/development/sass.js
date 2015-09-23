@@ -12,16 +12,21 @@ var config       = require('../../config');
  * Build sourcemaps
  */
 gulp.task('sass', function() {
-  var sassConfig = config.sass.options;
+  var sassConfig = config.sass.options,
+      sassQueue;
+
   sassConfig.onError = browsersync.notify;
 
-  // Don’t write sourcemaps of sourcemaps
-  var filter = gulpFilter(['*.css', '!*.map']);
+  function reportFinished() {
+      if (sassQueue) {
+          sassQueue--;
+          if (sassQueue === 0) {
+              callback();
+          }
+      }
+  }
 
-  browsersync.notify('Compiling Sass');
-
-  return gulp.src(config.sass.src)
-    .pipe(plumber())
+  function sassCompile (filename) {
     .pipe(sass(sassConfig))
     .pipe(sourcemaps.init())
     .pipe(autoprefixer(config.autoprefixer))

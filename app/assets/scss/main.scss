@@ -1,0 +1,154 @@
+@import './../bower_components/angular-material/angular-material';
+@import './../bower_components/material-design-lite/src/footer/mega_footer';
+@import './../bower_components/material-design-lite/src/footer/mini_footer';
+@import './../bower_components/fontawesome/scss/font-awesome';
+@import 'sprite';
+// colors http://paletton.com/#uid=72J0u0kq3vOg3ILliAqv6sfwRlZ
+// As hex codes */
+
+$green-0: #52d728;	// Main Primary color */
+$green-1: #90e974;
+$green-2: #6edf4b;
+$green-3: #32bf05;
+$green-4: #249400;
+
+$blue-0: #1ea288;	// Main Secondary color (1) */
+$blue-1: #65cbb7;
+$blue-2: #3cb39b;
+$blue-3: #049074;
+$blue-4: #00705a;
+
+$orange-0: #fe802f;	// Main Secondary color (2) */
+$orange-1: #ffb17f;
+$orange-2: #ff9855;
+$orange-3: #e15c06;
+$orange-4: #af4500;
+
+$red-0: #f12d48;	// Main Complement color */
+$red-1: #f87c8d;
+$red-2: #f55268;
+$red-3: #d60623;
+$red-4: #a70017;
+
+
+// As RGBa codes */
+
+$rgba-green-0: rgba(82, 215, 40, 1);	// Main Primary color */
+$rgba-green-1: rgba(144, 233, 116, 1);
+$rgba-green-2: rgba(110, 223, 75, 1);
+$rgba-green-3: rgba(50, 191, 5, 1);
+$rgba-green-4: rgba(36, 148, 0, 1);
+
+$rgba-blue-0: rgba(30, 162, 136, 1);	// Main Secondary color (1) */
+$rgba-blue-1: rgba(101, 203, 183, 1);
+$rgba-blue-2: rgba(60, 179, 155, 1);
+$rgba-blue-3: rgba(4, 144, 116, 1);
+$rgba-blue-4: rgba(0, 112, 90, 1);
+
+$rgba-orange-2-0: rgba(254, 128, 47, 1);	// Main Secondary color (2) */
+$rgba-orange-1: rgba(255, 177, 127, 1);
+$rgba-orange-2: rgba(255, 152, 85, 1);
+$rgba-orange-3: rgba(225, 92, 6, 1);
+$rgba-orange-4: rgba(175, 69, 0, 1);
+
+$rgba-red-0: rgba(241, 45, 72, 1);	// Main Complement color */
+$rgba-red-1: rgba(248, 124, 141, 1);
+$rgba-red-2: rgba(245, 82, 104, 1);
+$rgba-red-3: rgba(214, 6, 35, 1);
+$rgba-red-4: rgba(167, 0, 23, 1);
+
+// Sticky Footer until MDL implements it
+html {
+  font-size: 100%;
+
+  body {
+    height: 100%;
+  }
+}
+
+.wrapper {
+  margin: 0 auto -140px; // the bottom margin is the negative value of the footer's height
+  min-height: 100%;
+}
+
+footer,
+.push {
+  height: 140px; // '.push' must be the same height as 'footer'
+}
+
+.menu {
+  border-bottom: .1em solid $orange-0;
+  list-style: none;
+  margin-bottom: 2em;
+  padding: 0 0 .5em;
+
+  li {
+    display: inline;
+
+    .active {
+      background-color: $red-0;
+    }
+  }
+
+
+  li:before {
+    content: '|';
+    padding-right: .3em;
+  }
+
+  li:nth-child(1):before {
+    content: '';
+    padding: 0;
+  }
+
+}
+
+.menu:before {
+  content: '[';
+}
+
+.menu:after {
+  content: ']';
+}
+
+
+// home-cards
+.circle-icon {
+  border: 6px solid $green-0;
+  border-radius: 500px;
+}
+
+.card-title {
+  color: $blue-0;
+  text-transform: uppercase;
+
+}
+
+.card-icon {
+  color: $blue-4;
+  height: 5em;
+  padding: 18px;
+  width: 5em;
+}
+
+.header-icon {
+  color: $blue-4;
+  height: 4rem;
+  width: 4rem;
+}
+
+.main-header {
+  height: 25px;
+}
+
+.header-title {
+  .sub-header {
+    font-size: 1rem;
+    margin-left: 16px;
+  }
+}
+
+.md-actions {
+  margin-left: auto;
+  margin-right: auto;
+}

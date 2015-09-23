@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" data-ng-app="acs" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" data-ng-app="acs" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" data-ng-app="acs" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" data-ng-app="acs" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Fabulous Cleaning</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css">
+	<script src="scripts/modernizr.js"></script>
+</head>
+<body>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67247998-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<div class="wrapper">
+
+        <!--<div layout="row">
+            <div flex="5"></div>
+            <div flex="5">
+                <md-icon md-svg-icon="cleaning:maid" class="header-icon"></md-icon>
+            </div>
+            <div flex="50">
+                <h2>Fabulous Cleaning</h2>
+                <h4 class="sub-header">Alaska Cleaning Services</h4>
+            </div>
+            <div flex>test</div>
+        </div>-->
+
+		<div layout="column" md-medium-tall layout-fill>
+			<header>
+				<md-toolbar class="md-acs-theme">
+					<div class="md-toolbar-tools">
+						<md-button flex="10">
+							<md-icon md-svg-icon="cleaning:maid" class="header-icon"></md-icon>
+						</md-button>
+						<div class="header-title" flex="40">
+							<h1 class="md-toolbar-tools main-header">Fabulous Cleaning</h1>
+							<h2 class="sub-header">Alaska Cleaning Services</h2>
+						</div>
+						<ul class="menu" flex="50">
+							<li ng-class="menuClass('home')"><a href="#/home">Home</a></li>
+							<li ng-class="menuClass('residential')"><a href="#/residential">Residential</a></li>
+							<li ng-class="menuClass('commercial')"><a href="#/commercial">Commercial</a></li>
+							<li ng-class="menuClass('social')"><a href="#/social">Social</a></li>
+							<li ng-class="menuClass('contact')"><a href="#/contact">Contact</a></li>
+						</ul>
+					</div>
+				</md-toolbar>
+			</header>
+			<md-content>
+                <section>
+                    <md-subheader class="md-primary">{{pageTitle}}</md-subheader>
+                </section>
+				<div class="page-content"><div data-ng-view></div></div>
+			</md-content>
+		</div>
+
+
+		<div class="push"></div>
+
+	</div>
+
+	<footer class="mdl-mini-footer">
+		<div class="mdl-mini-footer__left-section">
+			<div class="mdl-logo">Fabulous Cleaning</div>
+			<ul class="mdl-mini-footer__link-list">
+				<li><a href="#/home">Home</a></li>
+				<li><a href="#/commercial">Business</a></li>
+				<li><a href="#/residential">Residential</a></li>
+				<li><a href="#/social">Social</a></li>
+				<li><a href="#/contact">Contact</a></li>
+			</ul>
+		</div>
+	</footer>
+
+
+ <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <!-- build:js(app/) ../../scripts/main.main.js -->
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./bower_components/angular-animate/angular-animate.js"></script>
+  <script src="./bower_components/angular-aria/angular-aria.js"></script>
+  <script src="./bower_components/angular-material/angular-material.js"></script>
+  <script src="./bower_components/angular-material-icons/angular-material-icons.js"></script>
+  <script src="./bower_components/angular-route/angular-route.js"></script>
+  <script src="./bower_components/material-design-lite/src/mdlComponentHandler.js"></script>
+  <script src="./bower_components/angularytics/dist/angularytics.js"></script>
+  <script src="./bower_components/svg-morpheus/compile/unminified/svg-morpheus.js"></script>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/header.js"></script>
+  <script src="home/home.js"></script>
+  <script src="residential/residential.js"></script>
+  <script src="commercial/commercial.js"></script>
+  <script src="contact/contact.js"></script>
+  <script src="shared/card/cardDirective.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/interpolate-filter.js"></script>
+  <!-- endbuild -->
+
+</body>
+</html>
