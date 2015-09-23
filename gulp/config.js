@@ -30,6 +30,18 @@ module.exports = {
     delete: {
         src: [developmentAssets]
     },
+    jekyll: {
+        development: {
+            src:    src,
+            dest:   development,
+            config: '_config.yml'
+        },
+        production: {
+            src:    src,
+            dest:   production,
+            config: '_config.yml,_config.build.yml'
+        }
+    },
     sass: {
         src:  srcAssets + '/scss/**/*.{sass,scss}',
         dest: developmentAssets + '/css',
@@ -39,7 +51,7 @@ module.exports = {
             compass: false,
             bundleExec: true,
             sourcemap: true,
-            sourcemapPath: '../../assets/scss'
+            sourcemapPath: '../../_assets/scss'
         }
     },
     autoprefixer: {
@@ -64,11 +76,11 @@ module.exports = {
         // A separate bundle will be generated for each
         // bundle config in the list below
         bundleConfigs: [{
-            entries:    './' + srcAssets + '/scripts/application.js',
+            entries:    './' + srcAssets + '/javascripts/application.js',
             dest:       developmentAssets + '/js',
             outputName: 'application.js'
         }, {
-            entries:    './' + srcAssets + '/scripts/head.js',
+            entries:    './' + srcAssets + '/javascripts/head.js',
             dest:       developmentAssets + '/js',
             outputName: 'head.js'
         }]
@@ -76,6 +88,16 @@ module.exports = {
     images: {
         src: srcAssets + '/images/**/*',
         dest: developmentAssets + '/images'
+    },
+    webp: {
+        src: productionAssets + '/images/**/*.{jpg,jpeg,png}',
+        dest: productionAssets + '/images/',
+        options: {}
+    },
+    gzip: {
+        src: production + '/**/*.{html,xml,json,css,js}',
+        dest: production,
+        options: {}
     },
     copyfonts: {
         development: {
@@ -98,22 +120,37 @@ module.exports = {
         }
     },
     watch: {
+        jekyll: [
+            '_config.yml',
+            '_config.build.yml',
+            'stopwords.txt',
+            src + '/_data/**/*.{json,yml,csv}',
+            src + '/_includes/**/*.{html,xml}',
+            src + '/_layouts/*.html',
+            src + '/_locales/*.yml',
+            src + '/_plugins/*.rb',
+            src + '/_posts/*.{markdown,md}',
+            src + '/**/*.{html,markdown,md,yml,json,txt,xml}',
+            src + '/*'
+        ],
         sass: srcAssets + '/scss/**/*.{sass,scss}',
-        scripts: srcAssets + '/scripts/**/*.js',
+        scripts: srcAssets + '/javascripts/**/*.js',
         images: srcAssets + '/images/**/*',
         sprites: srcAssets + '/images/**/*.png',
         svg: srcAssets + 'vectors/*.svg'
     },
     scsslint: {
         src: [
-            srcAssets + '/scss/**/*.{sass,scss}'
+            srcAssets + '/scss/**/*.{sass,scss}',
+            '!' + srcAssets + '/scss/base/_sprites.scss',
+            '!' + srcAssets + '/scss/helpers/_meyer-reset.scss'
         ],
         options: {
             bundleExec: true
         }
     },
     jshint: {
-        src: srcAssets + '/scripts/*.js'
+        src: srcAssets + '/javascripts/*.js'
     },
     sprites: {
         src: srcAssets + '/images/sprites/icon/*.png',
@@ -210,15 +247,5 @@ module.exports = {
             exclude: ['.DS_Store'],
             include: []
         }
-    },
-    webp: {
-        src: productionAssets + '/images/**/*.{jpg,jpeg,png}',
-        dest: productionAssets + '/images/',
-        options: {}
-    },
-    gzip: {
-        src: production + '/**/*.{html,xml,json,css,js}',
-        dest: production,
-        options: {}
-    },
+    }
 };
