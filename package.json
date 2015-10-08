@@ -7,18 +7,8 @@
     "modernizr": "./app/bower_components/modernizr/modernizr.js",
     "angularjs": "./app/bower_components/angular/angular.js"
   },
-  "browserify-shim": {
-    "modernizr": "Modernizr"
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  },
   "devDependencies": {
     "browser-sync": "^2.9.3",
-    "browserify": "^11.1.0",
-    "browserify-shim": "^3.8.10",
     "del": "^2.0.2",
     "glob": "^5.0.14",
     "gulp": "^3.9.0",
